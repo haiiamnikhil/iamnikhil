@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dm&9s^t60r3-w5lzp+83#c4i3g+v-b6_k5w(x+v#un_1onoix6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['167.99.114.155','localhost','iamnikhil.me','www.iamnikhil.me']
 
@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 STATIC_ROOT = '/home/nikhil/nikhilwebsite/staticfiles/'
 
 
