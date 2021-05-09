@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dm&9s^t60r3-w5lzp+83#c4i3g+v-b6_k5w(x+v#un_1onoix6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.56.1']
+ALLOWED_HOSTS = ['167.99.114.155','localhost','iamnikhil.me','www.iamnikhil.me']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'portfolio',
+        'USER': 'nikhil',
+        'PASSWORD': 'haiiamnikhil',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -106,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -119,7 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
+STATIC_ROOT = '/home/nikhil/nikhilwebsite/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static_files/'),]
+
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
