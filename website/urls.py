@@ -23,7 +23,7 @@ from app.sitemaps import *
 from django.contrib.sitemaps.views import sitemap
 
 sitemaps = {
-    'staic':StaticViewSitemap,
+    'static':StaticViewSitemap,
     'projects':ProjectsSitemap,
     'services':ServiceDetailsSitemap,
 }
