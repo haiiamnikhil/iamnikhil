@@ -19,6 +19,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
+from app.sitemaps import *
+from django.contrib.sitemaps.views import sitemap
+
+sitemaps = {
+    'staic':StaticViewSitemap,
+    'projects':ProjectsSitemap,
+    'services':ServiceDetailsSitemap,
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app.urls')),

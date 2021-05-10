@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Resume(models.Model):
@@ -30,6 +31,9 @@ class Projects(models.Model):
 
     def __str__(self):
         return str(self.projectName)
+
+    def get_absolute_url(self):
+        return reverse('projectsDetails',args=[self.slug])
 
 class ProjectTech(models.Model):
     projectName = models.ForeignKey(Projects,on_delete=models.CASCADE,null=True)
@@ -134,3 +138,6 @@ class Services(models.Model):
 
     def __str__(self):
         return self.detailedHeading
+
+    def get_absolute_url(self):
+        return reverse('servicesDetails',args=[self.slug])  
